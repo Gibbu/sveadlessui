@@ -1,0 +1,89 @@
+<script>
+	import {Menu, MenuButton, MenuItems, MenuItem} from '$lib';
+</script>
+
+# Menu (Dropdown)
+
+<div class="not-prose bg-gray-800 h-72 p-4 rounded-xl shadow-lg">
+	<Menu class="relative w-56">
+		<MenuButton let:active>
+			<button class="text-black px-4 py-2 rounded-md text-sm font-medium cursor-pointer {active ? 'bg-brand-dark' : 'bg-brand'}">
+				Options
+			</button>
+		</MenuButton>
+		<MenuItems class="absolute top-full right-0 w-56 translate-y-2 bg-gray-700 rounded shadow-md">
+			<div class="p-2">
+				<MenuItem let:active>
+					<button class="block w-full rounded text-sm text-left px-2 py-1 mb-1 {active ? 'bg-brand text-black' : 'text-gray-200'}">
+						Edit
+					</button>
+				</MenuItem>
+				<MenuItem let:active>
+					<button class="block w-full rounded text-sm text-left px-2 py-1 {active ? 'bg-brand text-black' : 'text-gray-200'}">
+						Duplicate
+					</button>
+				</MenuItem>
+			</div>
+			<div class="p-2 border-t border-t-gray-600">
+				<MenuItem let:active>
+					<button class="block w-full rounded text-sm text-left px-2 py-1 mb-1 {active ? 'bg-brand text-black' : 'text-gray-200'}">
+						Archive
+					</button>
+				</MenuItem>
+				<MenuItem let:active>
+					<button class="block w-full rounded text-sm text-left px-2 py-1 {active ? 'bg-brand text-black' : 'text-gray-200'}">
+						Move
+					</button>
+				</MenuItem>
+			</div>
+			<div class="p-2 border-t border-t-gray-600">
+				<MenuItem let:active>
+					<button class="block w-full rounded text-sm text-left px-2 py-1 {active ? 'bg-red-500 text-black' : 'text-red-500'}">
+						Delete
+					</button>
+				</MenuItem>
+			</div>
+		</MenuItems>
+	</Menu>
+</div>
+
+## Basic Example
+
+```html
+<script>
+	import {Menu, MenuButton, MenuItems, MenuItem} from 'sveadlessui';
+</script>
+
+<Menu>
+	<MenuButton let:open>
+		<button class="{open ? 'bg-teal-500' : 'bg-teal-600'}">
+			Options
+		</button>
+	</MenuButton>
+	<MenuItems>
+		<MenuItem let:active>
+			<button class="px-4 py-3 {active ? 'bg-teal-500 text-white' : 'text-gray-200'}">
+				Edit
+			</button>
+		</MenuItem>
+		<MenuItem let:active>
+			<button class="px-4 py-3 {active ? 'bg-teal-500 text-white' : 'text-gray-200'}">
+				Edit
+			</button>
+		</MenuItem>
+	</MenuItems>
+</Menu>
+```
+
+## API
+> Limitations of my brain or Svelte don't allow for `as` props or non div wrapped components.
+
+### MenuButton
+| Slotted Prop | Description |
+| :--- | :--- |
+| `active` | `boolean` <br> Whether or not the Menu is open. |
+
+### MenuItem
+| Slotted Prop | Description |
+| :--- | :--- |
+| `active` | `boolean` <br> Whether or not the item is the active/focused item in the list. |

@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+pre .token.tag {@apply text-red-400}
+pre .token.attr-name {@apply text-orange-400}
+pre .token.attr-value {@apply text-amber-200}
+pre .token.namespace {@apply text-amber-400}
+pre .token.keyword {@apply text-purple-400}
+pre .token.string {@apply text-amber-200}
