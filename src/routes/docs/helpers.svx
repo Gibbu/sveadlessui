@@ -21,7 +21,7 @@ console.log(classList) // 'text-sm font-medium text-gray-500 bg-teal-500/10'
 Since no 3rd index was given to the `selected` array it will only return the 2nd index if it is truthy.
 
 
-### Basic example using the [Listbox](/docs/listbox)
+### Example using the [Listbox](/docs/listbox)
 ```html
 <script>
 	import {classes, Menu, MenuButton, MenuItems, MenuItem} from 'sveadlessui';
@@ -44,7 +44,7 @@ Since no 3rd index was given to the `selected` array it will only return the 2nd
 <Listbox bind:value let:open class="relative w-52">
 	<ListboxButton class={classes(
 		'w-full flex items-center justify-between px-4 py-2 rounded-md',
-		'text-black text-sm font-medium cursor-pointer text-left'
+		'text-black text-sm font-medium cursor-pointer text-left',
 		[open, 'bg-brand-dark', 'bg-brand']
 	)}>
 		{value?.label || 'Select a fruit'}

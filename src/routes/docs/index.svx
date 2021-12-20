@@ -1,6 +1,8 @@
-# Home
-Welcome to the SveadlessUI docs.
-Here you'll find everything about HeadlessUI components for Svelte.
+# What is SveadlessUI?
+SveadlessUI is an attempt to recreate the very popular [HeadlessUI](https://headlessui.dev/) component library made by the amazing people at [Tailwind Labs](https://github.com/tailwindlabs).  
+  
+So what does it do? SveadessUI gives you fully accessable components out of the box while being completely unstyled.  
+Allowing you; the end user to determine how it looks. No conficting styles or CSS selectors.  
 
 ## Installation
 Simply run one of the commands in your project folder:
@@ -14,11 +16,37 @@ pnpm add sveadlessui -D
 
 Now you're good to go!
 
+## Simple Usage
+Simply open any `.svelte` file and import what components you would like to use.  
+All available components are linked on the left side navigation.
+
+```html
+<script>
+	import {Menu, MenuButton, MenuItems, MenuItem} from 'sveadlessui';
+</script>
+
+<Menu>
+	<MenuButton>
+		<button>Options</button>
+	</MenuButton>
+	<MenuItems>
+		<MenuItem let:active>
+			<button class="{active ? 'text-red-500' : 'text-gray-500'}">Delete</button>
+		</MenuItem>
+	</MenuItems>
+</Menu>
+```
+
+
+
 ## Limitations / Annoyances
 
-#### `as` prop
+#### `as` prop.
 Svelte has no dynamic rendering for HTML elements. So the most obvious element will be used instead.
 
 #### `div` wrapped components.
 Components such as `MenuButton` and `MenuItem` will be wrapped inside an empty `div` element.  
 This is used for querying slotted elements.
+
+#### Scoped CSS.
+Svelte has no way to pass scoped CSS to components meaning if you're using regular CSS, you will have to set a class on the components and then target them with global selectors.

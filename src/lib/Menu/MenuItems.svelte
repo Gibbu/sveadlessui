@@ -40,7 +40,7 @@
 		isMounted = true;
 		window.addEventListener('keyup', keyActions);
 		await tick();
-		items = document.querySelector(`#menu-items-${$ID}`).querySelectorAll('[id^="menu-item-"]:not([disabled])');
+		items = document.querySelector(`#menu-items-${$ID}`).querySelectorAll('[id^="menu-item-"]');
 	}
 	const destroy = async(): Promise<void> => {
 		window.removeEventListener('keyup', keyActions);

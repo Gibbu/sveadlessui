@@ -9,12 +9,12 @@
 					text: 'Home'
 				},
 				{
-					href: 'changelog',
-					text: 'Changelog'
-				},
-				{
 					href: 'helpers',
 					text: 'Helpers'
+				},
+				{
+					href: 'changelog',
+					text: 'Changelog'
 				}
 			]
 		},
@@ -40,8 +40,8 @@
 </script>
 
 <template>
-	<div class="max-w-screen-xl mx-auto py-10 px-5 grid grid-cols-[15.625rem,1fr] items-start gap-16">
-		<aside class="sticky top-24">
+	<div class="max-w-screen-xl w-full mx-auto py-10 px-5 gap-16 md:grid md:grid-cols-[15.625rem,1fr] md:items-start">
+		<aside class="top-24 mb-10 md:mb-0 md:sticky">
 			{#each pages as {title, links}}
 				{#if title}
 					<h4 class="text-xs uppercase text-gray-500 font-black mb-2 mt-8 pointer-events-none select-none">{title}</h4>

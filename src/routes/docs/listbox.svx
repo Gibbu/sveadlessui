@@ -1,5 +1,6 @@
 <script lang="ts">
 	import {classes, Listbox, ListboxButton, ListboxOptions, ListboxOption} from '$lib';
+	import Preview from '$components/Preview.svelte';
 
 	let value: any;
 	let fruits = [
@@ -24,7 +25,7 @@
 # Listbox
 Select dropdowns.
 
-<div class="not-prose bg-gray-800 h-72 p-4 rounded-xl shadow-lg">
+<Preview>
 	<Listbox bind:value let:open class="relative w-52">
 		<ListboxButton class="w-full text-left flex items-center justify-between text-black px-4 py-2 rounded-md text-sm font-medium cursor-pointer {open ? 'bg-brand-dark' : 'bg-brand'}">
 			{value?.label || 'Select a fruit'}
@@ -51,7 +52,7 @@ Select dropdowns.
 	<pre>
 		{JSON.stringify(value, true, 2)}
 	</pre>
-</div>
+</Preview>
 
 ## Basic Example
 

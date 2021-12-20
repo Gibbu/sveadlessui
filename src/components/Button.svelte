@@ -8,7 +8,7 @@
 	export {className as class}
 	
 	const classList = classes(
-		'inline-flex items-center px-4 py-2',
+		'inline-flex items-center justify-center px-4 py-2',
 		'text-sm font-medium',
 		'rounded cursor-pointer select-none',
 		[style === 'brand', 'bg-brand text-black border border-brand hover:bg-brand-light focus:bg-brand-dark focus:outline outline-1 outline-brand outline-offset-[3px]'],
