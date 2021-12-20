@@ -1,7 +1,27 @@
 {
   "name": "sveadlessui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A scuffed HeadlessUI for Svelte.",
+  "author": {
+    "name": "Gibbu",
+    "url": "https://github.com/Gibbu"
+  },
+  "keywords": [
+    "svelte",
+    "svelte3",
+    "sveltejs",
+    "svelte-component",
+    "headlessui",
+    "tailwindcss",
+    "tailwind"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gibbu/sveadlessui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Gibbu/sveadlessui/issues"
+  },
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",

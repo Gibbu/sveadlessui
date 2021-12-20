@@ -16,6 +16,7 @@
 					</a>
 				</li>
 			</ul>
+			<small class="text-xs font-medium mt-4 block text-gray-600">More coming soon...</small>
 		</aside>
 		<main class="max-w-full prose prose-invert prose-tr:flex prose-th:flex-1 prose-td:flex-1 prose-blockquote:text-sm prose-blockquote:text-gray-500 prose-blockquote:border-gray-700">
 			<slot />

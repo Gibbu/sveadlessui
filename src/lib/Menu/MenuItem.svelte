@@ -7,6 +7,7 @@
 	const ID = useId();
 
 	let activeItem: Writable<number> = getContext('activeItem');
+	let visible: Writable<boolean> = getContext('visible');
 
 	let active = $activeItem === $ID;
 
@@ -34,6 +35,7 @@
 		child.setAttribute('tabindex', '-1');
 		child.addEventListener('mouseenter', setActive);
 		child.addEventListener('mouseleave', removeActive);
+		child.addEventListener('click', () => $visible = false);
 	})
 </script>
 

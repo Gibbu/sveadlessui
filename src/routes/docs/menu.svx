@@ -1,5 +1,8 @@
-<script>
+<script lang="ts">
 	import {Menu, MenuButton, MenuItems, MenuItem} from '$lib';
+
+	let current: string | null = null;
+	const clicked = (button: string) => current = button;
 </script>
 
 # Menu (Dropdown)
@@ -14,37 +17,38 @@
 		<MenuItems class="absolute top-full right-0 w-56 translate-y-2 bg-gray-700 rounded shadow-md">
 			<div class="p-2">
 				<MenuItem let:active>
-					<button class="block w-full rounded text-sm text-left px-2 py-1 mb-1 {active ? 'bg-brand text-black' : 'text-gray-200'}">
+					<button class="block w-full rounded text-sm text-left px-2 py-1 mb-1 {active ? 'bg-brand text-black' : 'text-gray-200'}" on:click={() => clicked('edit')}>
 						Edit
 					</button>
 				</MenuItem>
 				<MenuItem let:active>
-					<button class="block w-full rounded text-sm text-left px-2 py-1 {active ? 'bg-brand text-black' : 'text-gray-200'}">
+					<button class="block w-full rounded text-sm text-left px-2 py-1 {active ? 'bg-brand text-black' : 'text-gray-200'}" on:click={() => clicked('duplicate')}>
 						Duplicate
 					</button>
 				</MenuItem>
 			</div>
 			<div class="p-2 border-t border-t-gray-600">
 				<MenuItem let:active>
-					<button class="block w-full rounded text-sm text-left px-2 py-1 mb-1 {active ? 'bg-brand text-black' : 'text-gray-200'}">
+					<button class="block w-full rounded text-sm text-left px-2 py-1 mb-1 {active ? 'bg-brand text-black' : 'text-gray-200'}" on:click={() => clicked('archive')}>
 						Archive
 					</button>
 				</MenuItem>
 				<MenuItem let:active>
-					<button class="block w-full rounded text-sm text-left px-2 py-1 {active ? 'bg-brand text-black' : 'text-gray-200'}">
+					<button class="block w-full rounded text-sm text-left px-2 py-1 {active ? 'bg-brand text-black' : 'text-gray-200'}" on:click={() => clicked('move')}>
 						Move
 					</button>
 				</MenuItem>
 			</div>
 			<div class="p-2 border-t border-t-gray-600">
 				<MenuItem let:active>
-					<button class="block w-full rounded text-sm text-left px-2 py-1 {active ? 'bg-red-500 text-black' : 'text-red-500'}">
+					<button class="block w-full rounded text-sm text-left px-2 py-1 {active ? 'bg-red-500 text-black' : 'text-red-500'}" on:click={() => clicked('delete')}>
 						Delete
 					</button>
 				</MenuItem>
 			</div>
 		</MenuItems>
 	</Menu>
+	<p>Clicked: {current}</p>
 </div>
 
 ## Basic Example
@@ -52,6 +56,10 @@
 ```html
 <script>
 	import {Menu, MenuButton, MenuItems, MenuItem} from 'sveadlessui';
+
+	const edit = () => {
+		// code...
+	}
 </script>
 
 <Menu>
@@ -62,13 +70,13 @@
 	</MenuButton>
 	<MenuItems>
 		<MenuItem let:active>
-			<button class="px-4 py-3 {active ? 'bg-teal-500 text-white' : 'text-gray-200'}">
+			<button class="px-4 py-3 {active ? 'bg-teal-500 text-white' : 'text-gray-200'}" on:click={edit}>
 				Edit
 			</button>
 		</MenuItem>
 		<MenuItem let:active>
-			<button class="px-4 py-3 {active ? 'bg-teal-500 text-white' : 'text-gray-200'}">
-				Edit
+			<button class="px-4 py-3 {active ? 'bg-red-500 text-white' : 'text-red-500'}">
+				Delete
 			</button>
 		</MenuItem>
 	</MenuItems>
