@@ -89,7 +89,7 @@
 ### MenuButton
 | Slotted Prop | Description |
 | :--- | :--- |
-| `active` | `boolean` <br> Whether or not the Menu is open. |
+| `open` | `boolean` <br> Whether or not the Menu is open. |
 
 ### MenuItem
 | Slotted Prop | Description |
