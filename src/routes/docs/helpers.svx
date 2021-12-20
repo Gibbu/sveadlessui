@@ -1,0 +1,70 @@
+# Helpers
+There's also a helper functions included.
+> Only one for now.
+
+## `classes(string: any): string`
+If a `string` is given, simply return it.  
+If an `array` is given: check state of first index; if true return 2nd index; if false return 3rd index.  
+
+```js
+import {classes} from 'sveadlessui';
+
+let active = false;
+let selected = true;
+let classList = classes(
+	'text-sm font-medium',
+	[active, 'text-teal-500', 'text-gray-500']
+	[selected, 'bg-teal-500/10']
+)
+console.log(classList) // 'text-sm font-medium text-gray-500 bg-teal-500/10'
+```
+Since no 3rd index was given to the `selected` array it will only return the 2nd index if it is truthy.
+
+
+### Basic example using the [Listbox](/docs/listbox)
+```html
+<script>
+	import {classes, Menu, MenuButton, MenuItems, MenuItem} from 'sveadlessui';
+
+	let value;
+	let fruits = [
+		{
+			label: 'Apple',
+			value: 'apple',
+			unavailable: false
+		},
+		{
+			label: 'Banana',
+			value: 'banana',
+			unavailable: true
+		}
+	]
+</script>
+
+<Listbox bind:value let:open class="relative w-52">
+	<ListboxButton class={classes(
+		'w-full flex items-center justify-between px-4 py-2 rounded-md',
+		'text-black text-sm font-medium cursor-pointer text-left'
+		[open, 'bg-brand-dark', 'bg-brand']
+	)}>
+		{value?.label || 'Select a fruit'}
+	</ListboxButton>
+	<ListboxOptions class={classes(
+		'absolute top-full py-2 left-0 w-56 translate-y-2',
+		'bg-gray-700 rounded shadow-md'
+	)}>
+		{#each fruits as fruit}
+			<ListboxOption let:active let:selected value={fruit} disabled={fruit.unavailable}>
+				<div class={classes(
+					'w-full flex items-center justify-between px-2 py-1 text-sm',
+					[active, 'bg-gray-600 text-white'],
+					[selected, 'text-brand'],
+					[fruit.unavailable, 'text-gray-500 cursor-default select-none', 'cursor-pointer']
+				)}>
+					{fruit.label} {fruit.unavailable ? ' - Disabled' : ''}
+				</div>
+			</ListboxOption>
+		{/each}
+	</ListboxOptions>
+</Listbox>
+```

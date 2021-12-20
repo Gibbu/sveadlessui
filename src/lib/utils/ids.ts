@@ -5,6 +5,9 @@ import type {Writable} from 'svelte/store';
 let id: number = 0;
 const generateId = (): number => ++id;
 
+/**
+ * Generates a unique ID.
+ */
 export const useId = (): Writable<number> => {
 	const id = writable(typeof window !== 'undefined' ? generateId() : null);
 

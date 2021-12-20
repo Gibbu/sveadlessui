@@ -1,0 +1,18 @@
+# Changelog
+Updates for the package will be displayed here.
+
+### 0.1.0 - 20/12/2021
+
+#### Added
+- [Listbox](/docs/listbox) and associated components.
+- [classes](/docs/helpers) helper function.
+- `disabled` prop for `<MenuItem>` component.
+
+#### Changes
+- Allowed pressing Up Arrow to focus last element for `<MenuItem>`.
+
+#### Fixes
+- Pressing Enter on active `<MenuItem>` didn't click the button.
+
+#### Removed
+- `open` slotted props for `<MenuItems>` and `<MenuButton>` as they were redundant.

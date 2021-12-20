@@ -44,6 +44,6 @@
 
 <template>
 	<div bind:this={self}>
-		<slot active={$visible} />
+		<slot />
 	</div>
 </template>

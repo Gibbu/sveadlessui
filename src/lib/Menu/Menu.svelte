@@ -19,6 +19,6 @@
 
 <template>
 	<div class={className}>
-		<slot active={$visible} />
+		<slot open={$visible} />
 	</div>
 </template>

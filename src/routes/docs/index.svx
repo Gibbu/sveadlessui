@@ -1,0 +1,24 @@
+# Home
+Welcome to the SveadlessUI docs.
+Here you'll find everything about HeadlessUI components for Svelte.
+
+## Installation
+Simply run one of the commands in your project folder:
+```bash
+npm install sveadlessui -D
+# or
+yarn add sveadlessui -D
+# or
+pnpm add sveadlessui -D
+```
+
+Now you're good to go!
+
+## Limitations / Annoyances
+
+#### `as` prop
+Svelte has no dynamic rendering for HTML elements. So the most obvious element will be used instead.
+
+#### `div` wrapped components.
+Components such as `MenuButton` and `MenuItem` will be wrapped inside an empty `div` element.  
+This is used for querying slotted elements.

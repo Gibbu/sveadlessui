@@ -1,24 +1,64 @@
 <script lang="ts">
 	import {page} from '$app/stores';
 
+	const pages = [
+		{
+			links: [
+				{
+					href: '',
+					text: 'Home'
+				},
+				{
+					href: 'changelog',
+					text: 'Changelog'
+				},
+				{
+					href: 'helpers',
+					text: 'Helpers'
+				}
+			]
+		},
+		{
+			title: 'Components',
+			links: [
+				{
+					href: 'menu',
+					text: 'Menu'
+				},
+				{
+					href: 'listbox',
+					text: 'Listbox'
+				}
+			]
+		}
+	]
+
 	$: active = (href: string): boolean => {
-		return $page.path.split('/').pop() === href;
+		const path = $page.path.split('/')[2];
+		return path === href || !href && !path;
 	}
 </script>
 
 <template>
 	<div class="max-w-screen-xl mx-auto py-10 px-5 grid grid-cols-[15.625rem,1fr] items-start gap-16">
 		<aside class="sticky top-24">
-			<ul>
-				<li>
-					<a href="/docs/menu" class="px-4 py-3 rounded block -mx-4 text-sm font-medium {active('menu') ? 'text-brand bg-brand/10' : ''}">
-						Menu (Dropdown)
-					</a>
-				</li>
-			</ul>
-			<small class="text-xs font-medium mt-4 block text-gray-600">More coming soon...</small>
+			{#each pages as {title, links}}
+				{#if title}
+					<h4 class="text-xs uppercase text-gray-500 font-black mb-2 mt-8 pointer-events-none select-none">{title}</h4>
+				{/if}
+				<ul>
+					{#each links as {href, text}}
+						<li class="mb-1 last:mb-0">
+							<a href="/docs/{href}" class="px-3 py-2 rounded block -mx-3 text-sm font-medium select-none hover:bg-gray-800 {active(href) ? 'text-brand bg-brand/10 hover:bg-brand/10' : ''}">
+								{text}
+							</a>
+						</li>
+					{/each}
+				</ul>
+			{/each}
+			<small class="text-xs font-medium mt-2 block text-gray-600">More coming soon...</small>
 		</aside>
-		<main class="max-w-full prose prose-invert prose-tr:flex prose-th:flex-1 prose-td:flex-1 prose-blockquote:text-sm prose-blockquote:text-gray-500 prose-blockquote:border-gray-700">
+		<main class="max-w-full prose prose-invert prose-a:text-brand hover:prose-a:text-brand-dark prose-tr:flex prose-th:flex-1 prose-td:flex-1 prose-blockquote:text-sm prose-blockquote:text-gray-500 prose-blockquote:border-gray-700">
 			<slot />
 		</main>
 	</div>

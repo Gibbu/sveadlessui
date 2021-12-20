@@ -7,15 +7,28 @@
 		copiedText = true;
 		setTimeout(() => copiedText = false, 3000);
 	}
+
+	const pages = [
+		{
+			href: 'menu',
+			text: 'Menu',
+			description: `Context menus, overflow actions or dropdowns.`
+		},
+		{
+			href: 'listbox',
+			text: 'Listbox',
+			description: `Select dropdowns`
+		}
+	]
 </script>
 
 <template>
 	<main class="max-w-screen-xl mx-auto px-5">
-		<section class="h-96 flex flex-col justify-center items-start mt-20">
-			<h1 class="text-3xl font-bold text-white">The scuffed version of the HeadlessUI component library,<br>but for Svelte.</h1>
-			<small class="text-xs font-medium text-gray-700">There's most likely a better way of doing this.</small>
-			<div class="mt-10 flex gap-4">
-				<Button style="brand" href="/docs/menu">Get Started</Button>
+		<section class="h-[31.25rem] flex flex-col justify-center items-start mt-20">
+			<h1 class="text-5xl font-bold text-white leading-[1.3]">A scuffed version of the HeadlessUI component library, for Svelte.</h1>
+			<small class="block mt-2 text-xs font-medium text-gray-700">There's most likely a better way of doing this. But, it works-ish.</small>
+			<div class="mt-16 flex gap-4">
+				<Button style="brand" href="/docs">Get Started</Button>
 				<Button style="secondary" on:click={copy}>
 					npm install sveadlessui -D
 					{#if copiedText}
@@ -25,9 +38,14 @@
 			</div>
 		</section>
 
-		<h2 class="text-lg mb-4 text-gray-100">Available Components</h2>
+		<h2 class="text-sm font-semibold mb-4 text-gray-500">Available Components</h2>
 		<section class="grid grid-cols-3 gap-4">
-			<a href="/docs/menu" class="bg-gray-800 shadow-md px-6 py-4 rounded transition hover:shadow-lg hover:-translate-y-1 hover:text-gray-50">Menu (Dropdown)</a>
+			{#each pages as {href, text, description}}
+				<Button style="secondary" href="/docs/{href}" class="flex-col !items-start">
+					<p class="text-lg text-gray-100">{text}</p>
+					<small class="block text-xs mt-1 opacity-75">{description}</small>
+				</Button>
+			{/each}
 		</section>
 	</main>
 </template>
