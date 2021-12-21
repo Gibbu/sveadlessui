@@ -13,3 +13,7 @@ export {default as ListboxOption} from './Listbox/ListboxOption.svelte';
 export {default as Switch} from './Switch/Switch.svelte';
 export {default as SwitchGroup} from './Switch/SwitchGroup.svelte';
 export {default as SwitchLabel} from './Switch/SwitchLabel.svelte';
+
+export {default as Disclosure} from './Disclosure/Disclosure.svelte';
+export {default as DisclosureButton} from './Disclosure/DisclosureButton.svelte';
+export {default as DisclosurePanel} from './Disclosure/DisclosurePanel.svelte';

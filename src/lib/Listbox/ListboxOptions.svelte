@@ -13,6 +13,11 @@
 	let className: string | null = null;
 	export {className as class}
 
+	/**
+	 * Always renders the component.
+	 */
+	export let constant: boolean = false;
+
 	let isMounted: boolean = false;
 	let options: NodeListOf<Element>;
 	let index: number = -1;
@@ -62,7 +67,7 @@
 <svelte:window on:keydown={preventActions} />
 
 <template>
-	{#if $visible}
+	{#if constant || (!constant && $visible)}
 		<ul
 			id="listbox-options-{$ID}"
 			class={className}
@@ -76,7 +81,7 @@
 				outside: () => $visible = false
 			}}
 		>
-			<slot open={$visible} />
+			<slot />
 		</ul>
 	{/if}
 </template>

@@ -1,0 +1,107 @@
+<script lang="ts">
+	import {scale} from 'svelte/transition';
+	import {classes, Disclosure, DisclosureButton, DisclosurePanel} from '$lib';
+
+	import Preview from '$components/Preview.svelte';
+</script>
+
+
+
+# Disclosure
+Show and hide content like togglable accordian panels.
+
+<Preview>
+	<Disclosure let:open>
+		<DisclosureButton class={classes(
+			'py-2 px-4 w-full text-left rounded-md z-10 relative bg-gray-700',
+			'flex items-center justify-between',
+			'text-sm font-medium hover:text-white',
+			[open, 'rounded-b-none']
+		)}>
+			What is your refind policy?
+			<span class={classes([open, 'rotate-180'])}>
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+			</span>
+		</DisclosureButton>
+		<DisclosurePanel class="pt-6 pb-2 px-4 border border-gray-700 border-t-0 -mt-4">
+			<p>If you're unhappy with your purchase for any reason, email us within 90 days and we'll refund you in full, no questions asked. </p>
+		</DisclosurePanel>
+	</Disclosure>
+	<Disclosure let:open class="mt-6">
+		<DisclosureButton class={classes(
+			'py-2 px-4 w-full text-left rounded-md z-10 relative bg-gray-700',
+			'flex items-center justify-between',
+			'text-sm font-medium hover:text-white',
+			[open, 'rounded-b-none']
+		)}>
+			Do you offer technical support?
+			<span class={classes([open, 'rotate-180'])}>
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+			</span>
+		</DisclosureButton>
+		<DisclosurePanel class="pt-6 pb-2 px-4 border border-gray-700 border-t-0 -mt-4">
+			<p>Yes.</p>
+		</DisclosurePanel>
+	</Disclosure>
+</Preview>
+
+
+
+## Basic Example
+
+```html
+<script>
+	import {Disclosure, DisclosureButton, DisclosurePanel} from 'sveadlessui';
+</script>
+
+<Disclosure let:open>
+	<DisclosureButton class={open ? 'bg-teal-500' : 'bg-teal-600'}>
+		What is your refind policy?
+		<span class={open ? 'rotate-180' : ''}></span> <!-- Chevron arrow -->
+	</DisclosureButton>
+	<DisclosurePanel>
+		<p>Panel content</p>
+	</DisclosurePanel>
+</Disclosure>
+```
+
+
+
+## `constant` Prop
+If you would like to use Sveltes amazing transitions or control the visibility with CSS, placing the  `constant` prop on the `<DisclosurePanel />` component will ignore the internal state and and always render the component.  
+  
+This way you can use `{#if}` blocks and an empty element to apply the transition to.
+
+```html
+<script>
+	import {Disclosure, DisclosureButton, DisclosurePanel} from 'sveadlessui';
+	import {fly} from 'svelte/transition';
+</script>
+
+<Disclosure let:open>
+	<DisclosureButton class={open ? 'bg-teal-500' : 'bg-teal-600'}>
+		What is your refind policy?
+		<span class={open ? 'rotate-180' : ''}></span> <!-- Chevron arrow -->
+	</DisclosureButton>
+	{#if open}
+		<div transition:fly={{y: 5, duration: 150}}>
+			<DisclosurePanel>
+				<p>Panel content</p>
+			</DisclosurePanel>
+		</div>
+	{/if}
+</Disclosure>
+```
+
+
+
+## Component API
+### `<Disclosure />`
+| Slot Prop | Description |
+| :--- | :--- |
+| `open` | `boolean` <br> Whether or not the Disclosure is open. |
+
+### `<DisclosurePanel />`
+| Prop | Description |
+| :--- | :--- |
+| `constant` | `boolean` <br> Always renders the component. |

@@ -22,6 +22,9 @@
 	let className: string | null = null;
 	export {className as class}
 
+	/**
+	 * The selected value of the Listbox.
+	 */
 	export let value: any = null;
 	$: {
 		value = $selectedValue;

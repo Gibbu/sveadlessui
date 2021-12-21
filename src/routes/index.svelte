@@ -23,6 +23,11 @@
 			href: 'switch',
 			text: 'Switch',
 			description: 'Toggle a value between two states.'
+		},
+		{
+			href: 'disclosure',
+			text: 'Disclosure',
+			description: 'Show and hide content like togglable accordian panels.'
 		}
 	]
 </script>

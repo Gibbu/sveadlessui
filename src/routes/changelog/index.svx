@@ -5,6 +5,17 @@ Updates for the package will be displayed here.
 - - -
 
 
+### 0.3.0 - 22/12/2021
+#### Added
+- [Disclosure](/docs/disclosure) and associated components.
+- `constant` Props to `<MenuItems />` and `<ListboxOptions />` components.
+	- This always renders the component and ignores the internal state. Allowing for transitions and CSS visibility.
+
+
+
+- - -
+
+
 ### 0.2.0 - 21/12/2021
 #### Added
 - [Switch](/docs/switch) and associated components.
@@ -37,3 +48,13 @@ Updates for the package will be displayed here.
 
 #### Removed
 - `open` slot props for `<MenuItems />` and `<MenuButton />` as they were redundant.
+
+
+- - -
+
+
+### 0.0.1 - 20/12/2021
+First release.
+
+#### Added
+- [Menu](/docs/menu) and associated components.

@@ -86,6 +86,7 @@ If you'd like to disable this behaviour, add the `passive` prop to the `<SwitchL
 | :--- | :--- |
 | `enabled` | `boolean` <br> Whether or not the switch is checked. |
 
+
 ### `<SwitchLabel />`
 | Prop | Description |
 | :--- | :--- |

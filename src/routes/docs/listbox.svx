@@ -33,7 +33,7 @@ Select dropdowns.
 			{value?.label || 'Select a fruit'}
 			<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" /></svg>
 		</ListboxButton>
-		<ListboxOptions class="absolute top-full py-2 left-0 w-56 translate-y-2 bg-gray-700 rounded shadow-md">
+		<ListboxOptions class="absolute top-full py-2 left-0 w-full translate-y-2 bg-gray-700 rounded shadow-md">
 			{#each fruits as fruit}
 				<ListboxOption let:active let:selected value={fruit} disabled={fruit.unavailable}>
 					<div class={classes(
@@ -84,16 +84,58 @@ Select dropdowns.
 
 
 
+## `constant` Prop
+If you would like to use Sveltes amazing transitions or control the visibility with CSS, placing the  `constant` prop on the `<ListboxOptions />` component will ignore the internal state and and always render the component.  
+  
+This way you can use `{#if}` blocks and an empty element to apply the transition to.
+
+```html
+<script>
+	import {Listbox, ListboxButton, ListboxOptions, ListboxOption} from 'sveadlessui';
+	import {fly} from 'svelte/transition';
+
+	let value;
+	let fruits = ['Apple', 'Banana', 'Orange', 'Water Melon']
+</script>
+
+<Listbox bind:value let:open>
+	<ListboxButton>{value || 'Select a fruit'}</ListboxButton>
+	{#if open}
+		<div transition:fly={{y: 5, duration: 150}}>
+			<ListboxOptions constant>
+				{#each fruits as fruit}
+					<ListboxOption let:active let:selected value={fruit}>
+						<div class="{active ? 'text-red-500' : ''} {selected ? 'bg-red-500 text-white' : ''}">
+							{fruit}
+						</div>
+					</ListboxOption>
+				{/each}
+			</ListboxOptions>
+		</div>
+	{/if}
+</Listbox>
+```
+
+
+
+
 ## Component API
+
 ### `<Listbox />`
 | Prop | Description |
 | :--- | :--- |
 | `value` | `any` <br> The option value. |
 
-
 | Slot Prop | Description |
 | :--- | :--- |
 | `open` | `boolean` <br> Whether or not the Listbox is open. |
+
+
+### `<ListboxOptions />`
+| Prop | Description |
+| :--- | :--- |
+| `constant` | `boolean` <br> Always renders the component. |
+
 
 ### `<ListboxOption />`
 | Prop | Description |

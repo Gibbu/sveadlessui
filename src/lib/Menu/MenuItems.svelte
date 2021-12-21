@@ -9,6 +9,11 @@
 	let className: string | null = null;
 	export {className as class}
 
+	/**
+	 * Always renders the component.
+	 */
+	export let constant: boolean = false;
+
 	let menuGroup: boolean = getContext('menuGroup');
 	let visible: Writable<boolean> = getContext('visible');
 	let menuBtn: Writable<HTMLElement|null> = getContext('menuBtn');
@@ -67,7 +72,7 @@
 <svelte:window on:keydown={preventActions} />
 
 <template>
-	{#if $menuBtn && $visible}
+	{#if constant || (!constant && $menuBtn && $visible)}
 		<div
 			id="menu-items-{$ID}"
 			role="menu"

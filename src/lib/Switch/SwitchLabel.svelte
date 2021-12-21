@@ -9,7 +9,7 @@
 	export {className as class}
 	
 	/**
-	 * When true, clicking the label won't toggle the Switch.
+	 * Clicking the label won't toggle the Switch.
 	 */
 	export let passive: boolean = false;
 

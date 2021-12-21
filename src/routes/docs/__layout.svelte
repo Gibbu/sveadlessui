@@ -28,6 +28,10 @@
 				{
 					href: 'switch',
 					text: 'Switch'
+				},
+				{
+					href: 'disclosure',
+					text: 'Disclosure'
 				}
 			]
 		}
