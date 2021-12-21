@@ -1,8 +1,16 @@
 # Changelog
 Updates for the package will be displayed here.
 
-### 0.1.0 - 20/12/2021
+### 0.1.1 - 21/12/2021
+#### Changes
+- Cleaned up `<MenuItem>` slotted query selector.
 
+
+- - -
+
+
+
+### 0.1.0 - 20/12/2021
 #### Added
 - [Listbox](/docs/listbox) and associated components.
 - [classes](/docs/helpers) helper function.
