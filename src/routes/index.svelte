@@ -18,6 +18,11 @@
 			href: 'listbox',
 			text: 'Listbox',
 			description: `Select dropdowns`
+		},
+		{
+			href: 'switch',
+			text: 'Switch',
+			description: 'Toggle a value between two states.'
 		}
 	]
 </script>

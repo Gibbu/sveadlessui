@@ -1,0 +1,92 @@
+<script lang="ts">
+	import {classes, Switch, SwitchGroup, SwitchLabel} from '$lib';
+
+	import Preview from '$components/Preview.svelte';
+
+	let checked: boolean = false;
+</script>
+
+
+
+# Switch (Toggle)
+Toggle a value between two states.
+
+<Preview>
+	<SwitchGroup class="flex items-center gap-2">
+		<SwitchLabel class="cursor-pointer select-none">Email alerts</SwitchLabel>
+		<Switch bind:enabled={checked} class={classes(
+			'w-12 h-6 rounded-3xl p-1',
+			'flex items-center',
+			'transition',
+			[checked, 'bg-brand', 'bg-gray-500']
+		)}>
+			<span class={classes(
+				'w-4 h-4 rounded-full transition',
+				[checked, 'bg-black translate-x-6', 'bg-white']
+			)}></span>
+		</Switch>
+	</SwitchGroup>
+</Preview>
+
+
+
+## Basic Example
+
+```html
+<script>
+	import {Switch} from 'sveadlessui';
+
+	let checked = false;
+</script>
+
+<Switch bind:enabled={checked} class="{checked ? 'bg-teal-500 : 'bg-white'}">
+	<span class="w-4 h-4 {checked ? 'translate-x-6 : 'translate-x-0'}"></span>
+</Switch>
+```
+
+## Using `<SwitchLabel />`
+In some cases you may need to display text to indicate the `<Switch />`.  
+
+**Note**: If using the `<SwitchLabel />`, you must place it and the `<Switch />` components inside the `<SwitchGroup />` component.
+
+
+```html
+<script>
+	import {Switch, SwitchGroup, SwitchLabel} from 'sveadlessui';
+
+	let checked = false;
+</script>
+
+<SwitchGroup>
+	<SwitchLabel>Send Emails</SwitchLabel>
+
+	<Switch bind:enabled={checked} class="{checked ? 'bg-teal-500 : 'bg-white'}">
+		<span class="w-4 h-4 {checked ? 'translate-x-6 : 'translate-x-0'}"></span>
+	</Switch>
+</SwitchGroup>
+```
+
+Clicking the `<SwitchLabel />` will also toggle the `<Switch />`.  
+If you'd like to disable this behaviour, add the `passive` prop to the `<SwitchLabel />` component:
+
+```html
+<SwitchGroup>
+	<SwitchLabel passive></SwitchLabel>
+
+	<Switch bind:enabled={checked}></Switch>
+</SwitchGroup>
+```
+
+
+
+## Component API
+
+### `<Switch />`
+| Prop | Description |
+| :--- | :--- |
+| `enabled` | `boolean` <br> Whether or not the switch is checked. |
+
+### `<SwitchLabel />`
+| Prop | Description |
+| :--- | :--- |
+| `passive` | `boolean` <br> When true, clicking the label won't toggle the `<Switch />`. |

@@ -28,6 +28,10 @@
 				{
 					href: 'listbox',
 					text: 'Listbox'
+				},
+				{
+					href: 'switch',
+					text: 'Switch'
 				}
 			]
 		}

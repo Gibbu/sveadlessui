@@ -1,11 +1,15 @@
 <script lang="ts">
+	import {ERROR} from '../utils/error';
 	import clickOutside from '../utils/clickoutside';
-	import {getContext, tick} from 'svelte';
+	import {getContext, onMount, tick, setContext} from 'svelte';
 	import type {Writable} from 'svelte/store';
+
+	setContext('menuItemsGroup', true) // Used to check if child components are inside the correct positions.
 
 	let className: string | null = null;
 	export {className as class}
 
+	let menuGroup: boolean = getContext('menuGroup');
 	let visible: Writable<boolean> = getContext('visible');
 	let menuBtn: Writable<HTMLElement|null> = getContext('menuBtn');
 	let ID: Writable<number> = getContext('ID');
@@ -54,6 +58,10 @@
 	} else if (!$visible && isMounted) {
 		destroy();
 	}
+
+	onMount(() => {
+		if (!menuGroup) ERROR('<MenuItems /> must a child component of <Menu />');
+	})
 </script>
 
 <svelte:window on:keydown={preventActions} />

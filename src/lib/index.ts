@@ -9,3 +9,7 @@ export {default as Listbox} from './Listbox/Listbox.svelte';
 export {default as ListboxButton} from './Listbox/ListboxButton.svelte';
 export {default as ListboxOptions} from './Listbox/ListboxOptions.svelte';
 export {default as ListboxOption} from './Listbox/ListboxOption.svelte';
+
+export {default as Switch} from './Switch/Switch.svelte';
+export {default as SwitchGroup} from './Switch/SwitchGroup.svelte';
+export {default as SwitchLabel} from './Switch/SwitchLabel.svelte';

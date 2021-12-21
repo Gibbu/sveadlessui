@@ -1,10 +1,13 @@
 <script lang="ts">
 	import {getContext, onMount} from 'svelte';
 	import {useId} from '../utils/ids';
+	import {ERROR} from '../utils/error';
 
 	import type {Writable} from 'svelte/store';
 
 	const ID = useId();
+	let menuGroup: boolean | null = getContext('menuGroup');
+	let menuItemsGroup: boolean | null = getContext('menuItemsGroup');
 	let activeItem: Writable<number> = getContext('activeItem');
 	let visible: Writable<boolean> = getContext('visible');
 
@@ -29,10 +32,10 @@
 
 	onMount(() => {
 		child = self?.children[0];
-		if (!child) {
-			console.error('[Svelte HeadlessUI] MenuItem must have 1 child element.');
-			return;
-		}
+
+		if (!menuGroup) ERROR('<MenuItem /> must a grandchild of <Menu />');
+		if (!menuItemsGroup) ERROR('<MenuItem /> must a child of <MenuItems />')
+		if (!child) ERROR('<MenuItem /> component must have 1 child element');
 
 		if (disabled) {
 			child.setAttribute('disabled', 'true');

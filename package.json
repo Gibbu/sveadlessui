@@ -1,6 +1,6 @@
 {
   "name": "sveadlessui",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A scuffed HeadlessUI for Svelte.",
   "author": {
     "name": "Gibbu",
@@ -34,7 +34,6 @@
     "@sveltejs/adapter-vercel": "next",
     "@sveltejs/kit": "next",
     "@tailwindcss/typography": "^0.5.0",
-    "@types/cookie": "^0.4.1",
     "autoprefixer": "^10.4.0",
     "mdsvex": "^0.9.8",
     "postcss-load-config": "^3.1.0",

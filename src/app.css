@@ -6,7 +6,7 @@ html {
 	tab-size: 2;
 }
 
-pre .token.tag {@apply text-purple-400}
+pre .token.tag {@apply text-indigo-400}
 pre .token.attr-name {@apply text-emerald-400}
 pre .token.attr-value {@apply text-emerald-200}
 pre .token.namespace {@apply text-emerald-400}

@@ -15,6 +15,8 @@
 	setContext('menuBtn', menuBtn);
 	setContext('activeItem', activeItem);
 	setContext('ID', ID);
+
+	setContext('menuGroup', true) // Used to check if child components are inside the correct positions.
 </script>
 
 <template>

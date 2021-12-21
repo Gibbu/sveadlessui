@@ -6,6 +6,8 @@
 	const select = (string: string) => current = string;
 </script>
 
+
+
 # Menu
 Used to create context menus, overflow actions or dropdowns.
 
@@ -53,6 +55,8 @@ Used to create context menus, overflow actions or dropdowns.
 	<p>Clicked: {current}</p>
 </Preview>
 
+
+
 ## Basic Example
 
 ```html
@@ -85,18 +89,20 @@ Used to create context menus, overflow actions or dropdowns.
 </Menu>
 ```
 
+
+
 ## Component API
 
-### `<Menu>`
-| Slotted Prop | Description |
+### `<Menu />`
+| Slot Prop | Description |
 | :--- | :--- |
 | `open` | `boolean` <br> Whether or not the Menu is open. |
 
-### `<MenuItem>`
+### `<MenuItem />`
 | Prop | Description |
 | :--- | :--- |
 | `disabled` | `boolean` <br> Whether or not the item is the disabled for keyboard navigation and ARIA purposes. |
 
-| Slotted Prop | Description |
+| Slot Prop | Description |
 | :--- | :--- |
 | `active` | `boolean` <br> Whether or not the item is the active/focused item in the list. |

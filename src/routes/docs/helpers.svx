@@ -2,6 +2,8 @@
 There's also a helper functions included.
 > Only one for now.
 
+
+
 ## `classes(string: any): string`
 If a `string` is given, simply return it.  
 If an `array` is given: check state of first index; if true return 2nd index; if false return 3rd index.  

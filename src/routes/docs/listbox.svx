@@ -22,6 +22,8 @@
 	]
 </script>
 
+
+
 # Listbox
 Select dropdowns.
 
@@ -54,6 +56,8 @@ Select dropdowns.
 	</pre>
 </Preview>
 
+
+
 ## Basic Example
 
 ```html
@@ -78,23 +82,25 @@ Select dropdowns.
 </Listbox>
 ```
 
+
+
 ## Component API
-### `<Listbox>`
+### `<Listbox />`
 | Prop | Description |
 | :--- | :--- |
 | `value` | `any` <br> The option value. |
 
 
-| Slotted Prop | Description |
+| Slot Prop | Description |
 | :--- | :--- |
 | `open` | `boolean` <br> Whether or not the Listbox is open. |
 
-### `<ListboxOption>`
+### `<ListboxOption />`
 | Prop | Description |
 | :--- | :--- |
 | `disabled` | `boolean` <br> Whether or not the item is the disabled for keyboard navigation and ARIA purposes. |
 
-| Slotted Prop | Description |
+| Slot Prop | Description |
 | :--- | :--- |
 | `active` | `boolean` <br> Whether or not the option is the active/focused option. |
 | `active` | `boolean` <br> Whether or not the option is the selected option. |
