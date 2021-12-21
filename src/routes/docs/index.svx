@@ -17,7 +17,7 @@ pnpm add sveadlessui -D
 Now you're good to go!
 
 ## Simple Usage
-Simply open any `.svelte` file and import what components you would like to use.  
+Open any `.svelte` file and import what components you would like to use.  
 All available components are linked on the left side navigation.
 
 ```html

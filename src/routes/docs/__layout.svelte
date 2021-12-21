@@ -11,10 +11,6 @@
 				{
 					href: 'helpers',
 					text: 'Helpers'
-				},
-				{
-					href: 'changelog',
-					text: 'Changelog'
 				}
 			]
 		},

@@ -1,6 +1,10 @@
 # Changelog
 Updates for the package will be displayed here.
 
+
+- - -
+
+
 ### 0.2.0 - 21/12/2021
 #### Added
 - [Switch](/docs/switch) and associated components.
