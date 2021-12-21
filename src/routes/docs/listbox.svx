@@ -103,4 +103,4 @@ Select dropdowns.
 | Slot Prop | Description |
 | :--- | :--- |
 | `active` | `boolean` <br> Whether or not the option is the active/focused option. |
-| `active` | `boolean` <br> Whether or not the option is the selected option. |
+| `selected` | `boolean` <br> Whether or not the option is the selected option. |
