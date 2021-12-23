@@ -1,4 +1,2 @@
-# SveadlessUI
-[HeadlessUI](https://headlessui.dev) for Svelte.
-
-Documentation available at: https://sveadlessui.vercel.app
+# Repo deprecated.
+[rgossiaux](https://github.com/rgossiaux) made an amazing port of HeadlessUI which is 100x better than mine: [svelte-headlessui](https://github.com/rgossiaux/svelte-headlessui)
